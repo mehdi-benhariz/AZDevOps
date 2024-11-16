@@ -1,0 +1,62 @@
+@model DotNet.Models.Concert
+
+@{
+    ViewData["Title"] = "Ajouter un Concert";
+}
+
+<h1>Ajouter un Concert</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="Artiste" class="control-label"></label>
+                <input asp-for="Artiste" class="form-control" />
+                <span asp-validation-for="Artiste" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" type="date" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="HeureDebut" class="control-label"></label>
+                <input asp-for="HeureDebut" class="form-control" type="time" />
+                <span asp-validation-for="HeureDebut" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="Lieu" class="control-label"></label>
+                <input asp-for="Lieu" class="form-control" />
+                <span asp-validation-for="Lieu" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="PrixBillet" class="control-label"></label>
+                <input asp-for="PrixBillet" class="form-control" />
+                <span asp-validation-for="PrixBillet" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="PlacesDisponibles" class="control-label"></label>
+                <input asp-for="PlacesDisponibles" class="form-control" />
+                <span asp-validation-for="PlacesDisponibles" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Créer" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>
+            </div>
+        </form>
+    </div>
+</div>

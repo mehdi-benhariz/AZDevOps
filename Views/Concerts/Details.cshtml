@@ -1,0 +1,37 @@
+@model DotNet.Models.Concert
+
+@{
+    ViewData["Title"] = "Détails du Concert";
+}
+
+<h1>Détails du Concert</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Artiste)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Artiste)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Date)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Date)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.HeureDebut)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.HeureDebut)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Lieu)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Lieu)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PrixBillet)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.PrixBillet) DT</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PlacesDisponibles)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.PlacesDisponibles)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Description)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Description)</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Modifier</a>
+    <a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>
+</div>

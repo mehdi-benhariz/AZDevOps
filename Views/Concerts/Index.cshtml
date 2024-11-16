@@ -1,0 +1,42 @@
+@model IEnumerable<DotNet.Models.Concert>
+
+@{
+    ViewData["Title"] = "Liste des Concerts";
+}
+
+<h1>Festival de Carthage - Concerts</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Ajouter un Concert</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Artiste)</th>
+            <th>@Html.DisplayNameFor(model => model.Date)</th>
+            <th>@Html.DisplayNameFor(model => model.HeureDebut)</th>
+            <th>@Html.DisplayNameFor(model => model.Lieu)</th>
+            <th>@Html.DisplayNameFor(model => model.PrixBillet)</th>
+            <th>@Html.DisplayNameFor(model => model.PlacesDisponibles)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var concert in Model)
+        {
+            <tr>
+                <td>@concert.Artiste</td>
+                <td>@concert.Date.ToShortDateString()</td>
+                <td>@concert.HeureDebut</td>
+                <td>@concert.Lieu</td>
+                <td>@concert.PrixBillet</td>
+                <td>@concert.PlacesDisponibles</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@concert.Id" class="btn btn-warning btn-sm">Modifier</a>
+                    <a asp-action="Details" asp-route-id="@concert.Id" class="btn btn-info btn-sm">Détails</a>
+                    <a asp-action="Delete" asp-route-id="@concert.Id" class="btn btn-danger btn-sm">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
