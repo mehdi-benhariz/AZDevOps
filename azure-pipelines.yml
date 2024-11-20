@@ -16,6 +16,10 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@1
+- task: DotNetCoreCLI@2
+  inputs:
+    azureSubscription: 'Visual Studio Enterprise Subscription(1f19a9c6-aeb7-4492-81ab-105fa144ce4f)'
+    command: 'build'
 
 - task: NuGetCommand@2
   inputs:
